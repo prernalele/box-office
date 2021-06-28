@@ -1,18 +1,19 @@
 import React from 'react';
+import { StyledActorCard } from './ActorCardStyled';
 
 const ActorCard = ({ image, name, gender, country, birthday, deathday }) => {
   return (
-    <div>
+    <StyledActorCard>
       <div>
-        <img src={image} alt="actor" />
+        <img className='img-wrapper' src={image} alt="actor" />
       </div>
       <h1>
         {name} {gender ? `(${gender})` : null}
       </h1>
       <p>{country ? `Comes from ${country}` : 'No country known'}</p>
       {birthday ? <p>Born {birthday}</p> : null}
-      <p>{deathday ? `Died ${deathday}` : 'Alive'}</p>
-    </div>
+      <p className='deathday'>{deathday ? `Died ${deathday}` : 'Alive'}</p>
+    </StyledActorCard>
   );
 };
 
