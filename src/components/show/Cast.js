@@ -1,23 +1,28 @@
 import React from 'react';
 import IMG_PLACEHOLDER from '../../images/not-found.png';
+import { CastList } from './Cast.styled';
 
 const Cast = ({ cast }) => {
   return (
-    <div>
+    <CastList>
       {cast.map(({ person, character, voice }, key) => (
-        <div key={key}>
-          <div>
-            <img src={person.image ? person.image.medium : IMG_PLACEHOLDER} alt='cast-person'/>
+        <div key={key} className='cast-item'>
+          <div className='pic-wrapper'>
+            <img
+              src={person.image ? person.image.medium : IMG_PLACEHOLDER}
+              alt="cast-person"
+              
+            />
           </div>
           <div>
-            <span>
-              {person.name} | {character.name } {voice? `| ${voice}` : ''}
-              {console.log('voice',person.voice )}
+            <span className='actor'>
+              <span className='bold'>{person.name} </span>
+              | {character.name} {voice ? `| ${voice}` : ''}
             </span>
           </div>
         </div>
       ))}
-    </div>
+    </CastList>
   );
 };
 
