@@ -9,7 +9,6 @@ const LINKS = [
 
 const Navs = () => {
   const location = useLocation()
-  console.log('location', location)
   return (
     <div>
       <NavList>
